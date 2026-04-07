@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+venv/
+env/
+.pytest_cache/
+
+# Infrastructure (Terraform)
+.terraform/
+*.tfstate
+*.tfstate.backup
+terraform.tfvars
+*.auto.tfvars
+!infrastructure/environments/*/config.tfvars
+.terraform.lock.hcl
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS generated files
+.DS_Store
+Thumbs.db

@@ -19,7 +19,7 @@ jobs:
 
       - name: Simulate AWS Dev Deployment
         run: |
-          echo "Starting deployment to the DEV environment..."
+          echo "🚀 Starting deployment to the DEV environment..."
           echo "Reading Dev Configuration:"
           cat infrastructure/environments/dev/config.tfvars
-          echo "Dev Deployment Complete!"
+          echo "✅ Dev Deployment Complete!"
