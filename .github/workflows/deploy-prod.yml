@@ -1,0 +1,20 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Simulate AWS Prod Deployment
+        run: |
+          echo "🚨 WARNING: Deploying to LIVE PRODUCTION 🚨"
+          echo "Reading Prod Configuration:"
+          cat infrastructure/environments/prod/config.tfvars
+          echo "✅ Production Deployment Complete!"
