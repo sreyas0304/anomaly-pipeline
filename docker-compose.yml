@@ -1,0 +1,22 @@
+services:
+  grafana:
+    image: grafana/grafana:11.4.0
+    container_name: fleet-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_INSTALL_PLUGINS: "grafana-athena-datasource"
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      ATHENA_REGION: "${ATHENA_REGION}"
+      ATHENA_CATALOG: "${ATHENA_CATALOG}"
+      ATHENA_DATABASE: "${ATHENA_DATABASE}"
+      ATHENA_WORKGROUP: "${ATHENA_WORKGROUP}"
+      ATHENA_OUTPUT_LOCATION: "${ATHENA_OUTPUT_LOCATION}"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+    restart: unless-stopped
+
+volumes:
+  grafana_data:

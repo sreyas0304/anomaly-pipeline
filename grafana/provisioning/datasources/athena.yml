@@ -1,0 +1,19 @@
+apiVersion: 1
+
+datasources:
+  - name: AWS Athena (Fleet Telemetry)
+    type: grafana-athena-datasource
+    access: proxy
+    isDefault: true
+    jsonData:
+      authType: keys
+      defaultRegion: ${ATHENA_REGION}
+      catalog: ${ATHENA_CATALOG}
+      database: ${ATHENA_DATABASE}
+      workGroup: ${ATHENA_WORKGROUP}
+      outputLocation: ${ATHENA_OUTPUT_LOCATION}
+    secureJsonData:
+      accessKey: ${AWS_ACCESS_KEY_ID}
+      secretKey: ${AWS_SECRET_ACCESS_KEY}
+    version: 1
+    editable: false

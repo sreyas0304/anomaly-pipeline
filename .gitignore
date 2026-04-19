@@ -3,7 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.env
+.env
 venv/
+.venv/
 env/
 .pytest_cache/
 
@@ -15,6 +17,8 @@ terraform.tfvars
 *.auto.tfvars
 !infrastructure/environments/*/config.tfvars
 .terraform.lock.hcl
+*.zip
+tfplan
 
 # IDEs
 .vscode/
